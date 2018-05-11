@@ -56,7 +56,7 @@ describe('the Greet Widget', function(){
 
     assert.deepEqual({ Thembisile: 0, Shaun: 0 }, greeting.nameMap())
   })
-  it('should include the same name twice in the map, only add once', function(){
+  it('should not include the same name twice in the map, only add once', function(){
     var greeting = GreetPerson();
 
     greeting.greetingFunction("Damon", 'IsiXhosa')
