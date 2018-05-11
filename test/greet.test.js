@@ -62,7 +62,8 @@ describe('the Greet Widget', function(){
     greeting.greetingFunction("Damon", 'IsiXhosa')
     greeting.greetingFunction("Damon", 'English')
     greeting.greetingFunction("Damon", 'Afrikaans')
+    greeting.greetingFunction("Tamia", 'Afrikaans')
 
-    assert.deepEqual({Damon: 0}, greeting.nameMap())
+    assert.deepEqual({Damon: 0, Tamia: 0}, greeting.nameMap())
   })
 });
