@@ -6,6 +6,7 @@ var lang = document.querySelector('.languageSelectRadio')
 var resetButton = document.querySelector('.resetBtn')
 var usersRef = localStorage.getItem('users');
 
+
 var storedUsers = usersRef ? JSON.parse(usersRef): {};
 
 count.innerHTML =  Object.keys(storedUsers).length;
@@ -19,12 +20,12 @@ function displayFunction(){
     var language = checkedGreetingRadio.value
   }
 
-  var textValue = valueName.value;
+   var textValue = valueName.value;
 
-  greetFactory.greetingFunction(textValue, language)
+
+   greetFactory.greetingFunction(textValue, language)
 
    localStorage.setItem('users', JSON.stringify( greetFactory.nameMap()));
-
 
    Eng.innerHTML =  greetFactory.returnGreeting()
    count.innerHTML = greetFactory.greetCounter()
@@ -39,9 +40,11 @@ function displayFunction(){
 }
 greetButton.addEventListener('click', function(){
   displayFunction()
+  valueName.value = '';
 })
 resetButton.addEventListener('click', function(){
   greetFactory.reset();
   count.innerHTML = 0;
   localStorage.clear()
+  valueName.value = '';
 })

@@ -26,23 +26,27 @@ function GreetPerson(storedUser){
     if(language === 'Afrikaans'){
       nameAndLang = 'Goeie Dag, ' + name;
     }
-    if (language === 'Xhosa') {
+    if (language === 'IsiXhosa') {
       nameAndLang = 'Molo, ' + name;
     }
   }
+
   function returnGreeting(){
     return nameAndLang
   }
+
   function greetCounter(){
     return Object.keys(mapNames).length;
-    }
-
+  }
+  
   function nameMap(){
     return mapNames
   }
+
   function reset(){
     return mapNames = {}
   }
+
   return {
     greetingFunction,
     returnGreeting,
