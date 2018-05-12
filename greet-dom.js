@@ -21,7 +21,7 @@ function displayFunction(){
   }
 
    var textValue = valueName.value;
-
+   
 
    greetFactory.greetingFunction(textValue, language)
 

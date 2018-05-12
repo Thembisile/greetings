@@ -38,7 +38,7 @@ function GreetPerson(storedUser){
   function greetCounter(){
     return Object.keys(mapNames).length;
   }
-  
+
   function nameMap(){
     return mapNames
   }

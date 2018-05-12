@@ -46,7 +46,7 @@ describe('the Greet Widget', function(){
     greeting.greetingFunction("Shaun", 'English');
     greeting.greetingFunction("shaun", 'English');
 
-    assert.equal(2, greeting.greetCounter());
+    assert.equal(1, greeting.greetCounter());
   })
   it('should return the names in the map', function(){
     var greeting = GreetPerson();
@@ -62,8 +62,9 @@ describe('the Greet Widget', function(){
     greeting.greetingFunction("Damon", 'IsiXhosa')
     greeting.greetingFunction("Damon", 'English')
     greeting.greetingFunction("Damon", 'Afrikaans')
+    greeting.greetingFunction("Tamia".toLowerCase(), 'Afrikaans')
     greeting.greetingFunction("Tamia", 'Afrikaans')
 
-    assert.deepEqual({Damon: 0, Tamia: 0}, greeting.nameMap())
+    assert.deepEqual({Damon: 0, tamia: 0, Tamia: 0}, greeting.nameMap())
   })
 });
