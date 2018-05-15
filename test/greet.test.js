@@ -1,5 +1,5 @@
 describe('the Greet Widget', function(){
-    it('should return greeting in English', function(){
+    it('should return greeting in English and the name', function(){
     var englishGreet = GreetPerson();
 
     englishGreet.greetingFunction("Shaun", 'English')
@@ -7,7 +7,7 @@ describe('the Greet Widget', function(){
     assert.equal('Hello, Shaun', englishGreet.returnGreeting())
     });
 
-    it('should return greeting in Afrikaans', function(){
+    it('should return greeting in Afrikaans and the name', function(){
     var englishGreet = GreetPerson();
 
     englishGreet.greetingFunction("Tamia", 'Afrikaans')
@@ -15,7 +15,7 @@ describe('the Greet Widget', function(){
     assert.equal('Goeie Dag, Tamia', englishGreet.returnGreeting())
     });
 
-    it('should return greeting in IsiXhosa', function(){
+    it('should return greeting in IsiXhosa and the name', function(){
     var englishGreet = GreetPerson();
 
     englishGreet.greetingFunction("Iviwe", 'IsiXhosa')
@@ -31,11 +31,11 @@ describe('the Greet Widget', function(){
 
     assert.equal(3, greeting.greetCounter())
   })
-  it('should count once for the same name entered', function(){
+  it('should count once for the same name entered despite the language', function(){
     var greeting = GreetPerson();
 
     greeting.greetingFunction("Shaun", 'English')
-    greeting.greetingFunction("Shaun", 'Afrikaans')
+    greeting.greetingFunction("Shaun", 'English')
     greeting.greetingFunction("Shaun", 'IsiXhosa')
 
     assert.equal(1, greeting.greetCounter());
@@ -48,11 +48,11 @@ describe('the Greet Widget', function(){
 
     assert.equal(1, greeting.greetCounter());
   })
-  it('should return the names in the map', function(){
+  it('sets the names and add them to a map and return the map', function(){
     var greeting = GreetPerson();
 
     greeting.greetingFunction("Thembisile", 'English');
-    greeting.greetingFunction("Shaun", 'English');
+    greeting.greetingFunction("Shaun", 'IsiXhosa');
 
     assert.deepEqual({ Thembisile: 0, Shaun: 0 }, greeting.nameMap())
   })

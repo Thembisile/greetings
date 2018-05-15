@@ -20,8 +20,8 @@ function displayFunction(){
     var language = checkedGreetingRadio.value
   }
 
-   var textValue = valueName.value;
-   
+   var textValue = valueName.value.toUpperCase();
+
 
    greetFactory.greetingFunction(textValue, language)
 
