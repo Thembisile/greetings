@@ -19,6 +19,11 @@ function displayFunction(){
     if (checkedGreetingRadio) {
     var language = checkedGreetingRadio.value
   }
+  else {
+    Eng.innerHTML = "Please Select Language"
+    Eng.style.color = 'Red'
+    return;
+  }
 
    var textValue = valueName.value.toUpperCase();
 
@@ -30,12 +35,17 @@ function displayFunction(){
    Eng.innerHTML =  greetFactory.returnGreeting()
    count.innerHTML = greetFactory.greetCounter()
 
-  if (textValue === "") {
-    Eng.innerHTML = 'Enter Name :'
-  }
+  // if (textValue === "") {
+  //   Eng.innerHTML = 'Enter Name :'
+  //   Eng.style.color = 'Red'
+  // }
 
-  if (!checkedGreetingRadio) {
-    Eng.innerHTML = 'Please Select Language'
+  if (isNaN(textValue)) {
+    Eng.innerHTML =  greetFactory.returnGreeting()
+  }
+  else {
+    Eng.innerHTML = 'Enter A Name :'
+    Eng.style.color = 'Red'
   }
 }
 greetButton.addEventListener('click', function(){

@@ -79,4 +79,11 @@ describe('the Greet Widget', function(){
     assert.deepEqual(1, greeting.greetCounter());
     assert.deepEqual(2, greeting2.greetCounter())
   })
+  it('should not take a number as a string', function(){
+    var greeting = GreetPerson();
+
+    greeting.returnGreeting(Number, 'Englsh')
+
+    assert.deepEqual('', greeting.returnGreeting())
+  })
 });
