@@ -66,11 +66,17 @@ describe('the Greet Widget', function(){
 
     assert.deepEqual({Damon: 0,Tamia: 0}, greeting.nameMap())
   })
-  it('should', function(){
-    var greeting = GreetPerson("Tamia");
+  it('should return the counter expected counter for the name stored in map', function(){
+    var greeting = GreetPerson({Tamia : 0});
 
     greeting.greetingFunction("Tamia", 'English')
 
-    assert.deepEqual('Tamia', greeting.nameMap())
+    var greeting2 = GreetPerson({Shaun : 0})
+
+    greeting2.greetingFunction("Shaun", 'IsiXhosa')
+    greeting2.greetingFunction("Thembisile", 'English')
+
+    assert.deepEqual(1, greeting.greetCounter());
+    assert.deepEqual(2, greeting2.greetCounter())
   })
 });
