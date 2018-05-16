@@ -43,7 +43,7 @@ describe('the Greet Widget', function(){
   it('should count once for the same name despite the letter case', function(){
     var greeting = GreetPerson();
 
-    greeting.greetingFunction("Shaun", 'English');
+    greeting.greetingFunction("Shaun".toLowerCase(), 'English');
     greeting.greetingFunction("shaun", 'English');
 
     assert.equal(1, greeting.greetCounter());
@@ -62,9 +62,8 @@ describe('the Greet Widget', function(){
     greeting.greetingFunction("Damon", 'IsiXhosa')
     greeting.greetingFunction("Damon", 'English')
     greeting.greetingFunction("Damon", 'Afrikaans')
-    greeting.greetingFunction("Tamia".toLowerCase(), 'Afrikaans')
-    greeting.greetingFunction("Tamia", 'Afrikaans')
+    greeting.greetingFunction("Tamia", 'English')
 
-    assert.deepEqual({Damon: 0, tamia: 0, Tamia: 0}, greeting.nameMap())
+    assert.deepEqual({Damon: 0,Tamia: 0}, greeting.nameMap())
   })
 });
