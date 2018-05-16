@@ -66,7 +66,7 @@ describe('the Greet Widget', function(){
 
     assert.deepEqual({Damon: 0,Tamia: 0}, greeting.nameMap())
   })
-  it('should return the counter expected counter for the name stored in map', function(){
+  it('should return the counter expected for the map passed into the constructor function ', function(){
     var greeting = GreetPerson({Tamia : 0});
 
     greeting.greetingFunction("Tamia", 'English')
