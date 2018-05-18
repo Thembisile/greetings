@@ -34,17 +34,12 @@ function displayFunction(){
 
    Eng.innerHTML =  greetFactory.returnGreeting()
    count.innerHTML = greetFactory.greetCounter()
-
-  // if (textValue === "") {
-  //   Eng.innerHTML = 'Enter Name :'
-  //   Eng.style.color = 'Red'
-  // }
-
+   
   if (isNaN(textValue)) {
     Eng.innerHTML =  greetFactory.returnGreeting()
   }
   else {
-    Eng.innerHTML = 'Enter A Name :'
+    Eng.innerHTML = 'Enter A Valid Name :'
     Eng.style.color = 'Red'
   }
 }
